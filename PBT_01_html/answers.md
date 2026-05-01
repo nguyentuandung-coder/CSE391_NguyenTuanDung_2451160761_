@@ -30,3 +30,15 @@ tại sao ko dùng table để layout cho trang web:
 -không thích ghi với màn hình điện thoạt đc kiểu trên máy tính thì đc còn trên điện thoại sẽ dễ lỗi
 -Và khó thích ghi đc vì code bằng table rất dài và dễ rối
 -Hiệu năng kém
+
+Câu A3:
+Nguồn tham chiếu Chương 04 — Block vs Inline Elements
+Kết quả hiển thị :
+
+Hộp 1  
+Text A Text B  
+Hộp 2  
+Text C Text D  
+Hộp 3
+
+Giải thích: -<div>Hộp 1</div> hiển thị riêng 1 dòng ,vì là 1 block element nên là nó chiếm toàn bộ chiều ngang , và kết thúc nó sẽ xuống dòng mới -<span> </span> là inline element chỉ chiếm phần nội dung và nằm cùng dòng với nhau -<strong> là để nhấn mạnh và cũng tương tự như <span> cũng là inline element.
