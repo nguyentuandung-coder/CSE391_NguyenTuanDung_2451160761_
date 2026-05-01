@@ -42,3 +42,29 @@ Text C Text D
 Hộp 3
 
 Giải thích: -<div>Hộp 1</div> hiển thị riêng 1 dòng ,vì là 1 block element nên là nó chiếm toàn bộ chiều ngang , và kết thúc nó sẽ xuống dòng mới -<span> </span> là inline element chỉ chiếm phần nội dung và nằm cùng dòng với nhau -<strong> là để nhấn mạnh và cũng tương tự như <span> cũng là inline element.
+
+câu B3
+Các lỗi:
+Lỗi 1: Dòng 1 — Sai DOCTYPE (`<!DOCTYPE>`) — Sửa thành `<!DOCTYPE html>`
+
+Lỗi 2: Dòng 4 — Thiếu đóng thẻ `<title>` — Thêm `</title>`
+
+Lỗi 3: Dòng 5 — charset sai (`utf8`) — Sửa thành `UTF-8`
+
+Lỗi 4: Dòng 8 — Thẻ `<h1>` không đóng đúng — Sửa thành `</h1>`
+
+Lỗi 5:Dòng 12 — Thẻ `<a>` không đóng — Thêm `</a>`
+
+Lỗi 6: Dòng 18 — Thiếu dấu ngoặc kép trong `src=iphone.jpg` — Sửa thành `src="iphone.jpg"`
+
+Lỗi 7: Dòng 18 — Thiếu thuộc tính `alt` cho `<img>` — Thêm `alt="iPhone 16 Pro"`
+
+Lỗi 8:Dòng 20 — Sai thứ tự đóng thẻ `<b>` và `<p>` — Sửa lại đúng nesting hoặc dùng `<strong>`
+
+Lỗi 9:Dòng 25 — Table thiếu `<thead>` và `<tbody>` — Thêm cấu trúc chuẩn
+
+Lỗi 10: Dòng 33 — Dùng 2 thẻ `<main>` — Chỉ được dùng 1 → đổi thành `<aside>`
+
+Lỗi 11: Dòng 38 — Thẻ `<p>` trong footer không đóng — Thêm `</p>`
+
+Lỗi 12: Thiếu `<html lang="vi">` — Thêm thuộc tính ngôn ngữ
