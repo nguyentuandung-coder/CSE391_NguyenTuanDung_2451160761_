@@ -46,3 +46,34 @@ Câu A5:
 2 ví dụ:
 -Ảnh đơn giản dùng để trang trí hay cho đẹp thì dùng img
 -Ảnh mà có nội dung có ý nghĩa thì dùng figure
+
+Câu C1:
+Lỗi 1: Dòng 2 — Input "Tên" không có <label> vi phạm accessibility, user không biết input này là gì
+Sửa:<label for="name">Tên:</label>
+<input type="text" id="name" name="name" required>
+Lỗi 2: Dòng 3 — Input email không có <label>
+Sửa:
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+Lỗi 3: Dòng 4–5 — Password không có <label>
+Sửa:
+<label for="pass">Mật khẩu:</label>
+<input type="password" id="pass" name="password" required>
+
+<label for="repass">Nhập lại mật khẩu:</label>
+<input type="password" id="repass" name="repassword" required>
+Lỗi 4: Dòng 6 — Phone dùng type="text"
+Sửa:
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+Lỗi 5: Dòng 7 — <select> không có label + name
+Sửa:
+<label for="city">Thành phố:</label>
+<select id="city" name="city" required>
+
+<option value="">--Chọn--</option>
+<option value="hn">Hà Nội</option>
+<option value="hcm">TP.HCM</option>
+</select>
+
+link video: -https://drive.google.com/drive/u/0/folders/1ct0SF9Esx8tMCg4XpLqkzBs-bzP_zKvh
