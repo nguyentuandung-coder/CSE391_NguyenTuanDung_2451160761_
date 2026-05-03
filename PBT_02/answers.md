@@ -21,8 +21,28 @@ câu A3:
 1.Form không có <label> = người dùng screen reader không biết ô nhập gì. Accessibility không phải 'nice to have' — nhiều công ty bắt buộc. Apple, Google đều kiểm tra
 2.dùng khi input nhiều chủ để như thông tin cá nhân , thông tin khách hàng, thông tin giao hàng ,<fieldset> dùng để nhóm các input liên quan thành một khối logic ,<legend> là tiêu đề của nhóm đó
 Ví dụ: nhóm "Thông tin giao hàng", "Thanh toán"
-3.dùng `aria-label` dùng khi phần tử không có text hiển thị nhưng vẫn cần cung cấp tên cho screen reader
+3.dùng aria-label dùng khi phần tử không có text hiển thị nhưng vẫn cần cung cấp tên cho screen reader
 Vì <label> đã cung cấp thông tin rõ ràng cho cả:
 -Người dùng bình thường
 -Screen reader
-Dùng thêm `aria-label` sẽ bị trùng lặp thông tin
+Dùng thêm aria-label sẽ bị trùng lặp thông tin
+
+Câu A4:
+1.thuộc tính loading="lazy" trên thẻ <img> có tác dụng trì hoãn việc tải ảnh , khi cuộn đến trang có ảnh thì mới tải ảnh , điều này giúp cho trang web dễ tải và mượt hơn , tăng hiệu năng
+2.Vì mỗi trình duyệt hỗ trợ format video khác nhau,cung cấp nhiều <source> giúp đảm bảo video chạy được trên mọi trình duyệt
+-3 format video web phổ biến:
+-MP4
+-WebM
+-OGG
+3.Thuộc tính alt dùng để mô tả ảnh khi ko tải đc ảnh
+Ảnh sản phẩm iPhone 16
+alt="iPhone 16 Pro Max màu Titan, màn hình 6.7 inch"
+
+Câu A5:
+<img> chỉ dùng để hiển thị mỗi ảnh ko có mô tả ảnh, ko có chú thích gì cả
+
+<figure> thì có cả ảnh và có chú thích ảnh mô tả ảnh
+
+2 ví dụ:
+-Ảnh đơn giản dùng để trang trí hay cho đẹp thì dùng img
+-Ảnh mà có nội dung có ý nghĩa thì dùng figure
