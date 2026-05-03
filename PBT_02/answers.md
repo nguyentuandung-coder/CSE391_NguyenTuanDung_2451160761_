@@ -17,3 +17,12 @@ th2: nếu nhập mỗi abc , thì sẽ báo lỗi thiếu @
 th3:nếu nhập 15 thì sẽ báo lỗi vượt phạm vi của số
 th4:yêu cầu nhập đủ 10 số nhưng ko nhập lên báo lỗi phải nhập đủ dữ liệu
 th5:nhập đủ 8 , vậy nên sẽ báo lỗi nhập thiếu dữ liệu
+câu A3:
+1.Form không có <label> = người dùng screen reader không biết ô nhập gì. Accessibility không phải 'nice to have' — nhiều công ty bắt buộc. Apple, Google đều kiểm tra
+2.dùng khi input nhiều chủ để như thông tin cá nhân , thông tin khách hàng, thông tin giao hàng ,<fieldset> dùng để nhóm các input liên quan thành một khối logic ,<legend> là tiêu đề của nhóm đó
+Ví dụ: nhóm "Thông tin giao hàng", "Thanh toán"
+3.dùng `aria-label` dùng khi phần tử không có text hiển thị nhưng vẫn cần cung cấp tên cho screen reader
+Vì <label> đã cung cấp thông tin rõ ràng cho cả:
+-Người dùng bình thường
+-Screen reader
+Dùng thêm `aria-label` sẽ bị trùng lặp thông tin
