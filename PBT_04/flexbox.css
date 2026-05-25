@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.navbar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #222;
+
+  padding: 15px 40px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+
+  list-style: none;
+
+  gap: 30px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+.auth button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.products {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  padding: 30px;
+}
+
+.card {
+  flex: 0 0 calc(25% - 20px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: white;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3,
+.card p {
+  padding: 0 15px;
+}
+
+.card button {
+  margin-top: auto;
+
+  margin: auto 15px 15px;
+
+  padding: 10px;
+
+  border: none;
+
+  background: #007bff;
+
+  color: white;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+}
