@@ -286,3 +286,84 @@ p#demo.text.highlight { color: crimson; }
 
 có specificity cao nhất là (1,2,1)
 Nếu chỉ đổi thứ tự các rule nhưng rule 'p#demo.text.highlight' vẫn tồn tại, kết quả không đổi
+
+# Câu C1 — Debug CSS Layout
+
+## 1. Tính chiều rộng thực tế
+
+Container rộng:
+960px
+
+### Sidebar
+
+css
+.sidebar {
+width: 300px;
+padding: 20px;
+border: 1px solid #ccc;
+}
+chiều rộng thực tế là:
+
+300 + 20 + 20 + 1 + 1 = 342px
+
+Sidebar thực tế = 342px
+
+Chiều rộng thực tế:
+
+660 + 30 + 30 + 1 + 1 = 722px
+
+Content thực tế = 722px
+Tổng chiều rộng
+
+342 + 722 = 1064px
+
+Container chỉ rộng 960px, nên:
+
+1064px > 960px
+
+Vì vậy layout bị vỡ, phần content bị đẩy xuống dòng mới
+
+Cách sửa 1 dùng border-box
+.sidebar,
+.content {
+box-sizing: border-box;
+}
+Cách sửa 2 không dùng border-box .content {
+width: 556px;
+}
+
+## Câu C2
+
+1. "Sản phẩm A" (h2) có font-size = 20px và color = green.
+
+Giải thích:
+
+- .card .title đặt font-size: 20px.
+- #featured .title đặt color: red
+- .highlight đặt color: green !important
+- Do có !importan, màu xanh lá (green) thắng màu đỏ
+
+2. "Mô tả sản phẩm" (p trong card featured) có color = blue.
+
+Giải thích:
+
+- .card có color: blue
+- .card p { color: inherit; } nên thẻ p kế thừa màu từ .card
+- Kết quả là màu xanh dương (blue).
+
+3. "Sản phẩm B" (h2) có font-size = 20px và color = blue.
+
+Giải thích:
+
+- .card .title đặt font-size: 20px.
+- Không có rule color riêng cho h2 này
+- H2 kế thừa màu từ .card, tức là blue
+
+4. "Mô tả sản phẩm B" (p.highlight) có color = green
+
+Giải thích:
+
+- .card p { color: inherit; }làm p kế thừa màu blue từ .card
+- Tuy nhiên p có class highlight
+- .highlight { color: green !important; } ghi đè màu blue
+- Kết quả cuối cùng là green
