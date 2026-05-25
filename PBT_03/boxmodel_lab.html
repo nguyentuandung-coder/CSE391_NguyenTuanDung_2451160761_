@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Box Model Lab</title>
+    <link rel="stylesheet" href="boxmodel.css" />
+  </head>
+  <body>
+    <h1>Box Model Lab</h1>
+
+    <section>
+      <h2>Phần 1: Content-box vs Border-box</h2>
+
+      <div class="box-wrapper">
+        <div class="box content-box">
+          <h3>Content-box</h3>
+          <p>width: 300px</p>
+          <p>padding: 20px</p>
+          <p>border: 5px</p>
+        </div>
+
+        <div class="box border-box">
+          <h3>Border-box</h3>
+          <p>width: 300px</p>
+          <p>padding: 20px</p>
+          <p>border: 5px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Phần 2: Layout 3 cột không dùng border-box</h2>
+
+      <p>
+        Trường hợp này bị vượt quá 1000px vì padding được cộng thêm vào width.
+      </p>
+
+      <div class="container layout-broken">
+        <div class="sidebar">Sidebar 250px + padding 15px</div>
+        <div class="content">Content 500px + padding 20px</div>
+        <div class="ads">Ads 250px + padding 15px</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Phần 3: Layout 3 cột dùng border-box</h2>
+
+      <p>
+        Trường hợp này vừa đúng 1000px vì width đã bao gồm content + padding +
+        border.
+      </p>
+
+      <div class="container layout-fixed">
+        <div class="sidebar">Sidebar 250px</div>
+        <div class="content">Content 500px</div>
+        <div class="ads">Ads 250px</div>
+      </div>
+    </section>
+  </body>
+</html>
