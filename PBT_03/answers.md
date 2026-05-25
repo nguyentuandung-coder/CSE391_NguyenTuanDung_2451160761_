@@ -367,3 +367,5 @@ Giải thích:
 - Tuy nhiên p có class highlight
 - .highlight { color: green !important; } ghi đè màu blue
 - Kết quả cuối cùng là green
+
+link video:https://drive.google.com/drive/folders/1tR-_pKZvTGbHTUa7v1Hte-1R28I-AC6l?usp=drive_link
