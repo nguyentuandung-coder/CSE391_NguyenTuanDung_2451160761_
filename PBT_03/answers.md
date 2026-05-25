@@ -1,0 +1,166 @@
+Câu A1
+1.Inline CSS
+
+<p style="color: red; font-size: 20px;">
+    Hello World
+</p>
+-Ưu điểm
+Nhanh, đơn giản
+Áp dụng trực tiếp cho một phần tử
+Có độ ưu tiên cao
+-Nhược điểm
+Khó bảo trì khi website lớn
+Trùng lặp code
+Không tách biệt giao diện và nội dung
+-Khi nào nên dùng
+Thử nghiệm nhanh
+Chỉnh sửa tạm thời cho một phần tử cụ thể
+
+2. Internal CSS
+<head>
+    <style>
+        p {
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+-Ưu điểm
+Không cần file CSS riêng
+Phù hợp cho trang web nhỏ
+-Nhược điểm
+Không tái sử dụng được cho nhiều trang
+File HTML trở nên dài và khó đọc
+-Khi nào nên dùng
+Website chỉ có một trang
+
+3. External CSS
+<link rel="stylesheet" href="style.css">
+-Ưu điểm
+Dễ bảo trì
+Tái sử dụng cho nhiều trang
+Tách riêng nội dung và giao diện
+Trình duyệt có thể cache file CSS giúp tải nhanh hơn
+-Nhược điểm
+Cần thêm file CSS riêng
+Nếu file CSS lỗi hoặc không tải được thì giao diện sẽ bị ảnh hưởng
+-Khi nào nên dùng
+Hầu hết các website thực tế
+Dự án vừa và lớn
+
+Câu A2 CSS Selectors
+
+1. h1
+   Chọn: ShopTLU
+
+Vì selector h1 chọn tất cả thẻ <h1> trong trang
+
+2. .price
+   Chọn:
+
+- 25.990.000đ
+- 45.990.000đ
+
+Vì selector .price chọn tất cả phần tử có class price
+
+3. #app header
+   Chọn:
+
+- Toàn bộ phần tử <header class="top-bar dark">
+
+Nội dung bên trong:
+
+ShopTLU
+Home
+Products
+About
+
+Vì selector này chọn thẻ header nằm bên trong phần tử có id app
+
+4. nav a:first-child
+   Chọn: Home
+
+Vì a:first-child là thẻ <a> đầu tiên bên trong <nav>.
+
+5. .product.featured h2
+   Chọn: MacBook Pro
+
+Vì:
+
+<article class="product featured">
+
+có đồng thời 2 class:
+
+product
+featured
+
+và selector lấy thẻ h2 bên trong article đó
+
+6. article > p
+   Chọn:
+
+- 25.990.000đ
+- Mô tả sản phẩm...
+- 45.990.000đ
+- Mô tả sản phẩm...
+
+Vì selector > chỉ chọn các thẻ p là con trực tiếp của article
+
+Mỗi article có 2 thẻ p
+
+Tổng cộng:
+
+4 phần tử p
+
+7. a[href="/"]
+   Chọn: Home
+
+Vì đây là thẻ:
+
+<a href="/">Home</a>
+
+8. .top-bar.dark h1
+   Chọn: ShopTLU
+
+Vì:
+
+<header class="top-bar dark">
+
+có đồng thời class:
+
+top-bar
+dark
+
+và selector lấy thẻ h1 nằm bên trong
+
+Câu A3— Box Model
+
+Trường hợp 1: content-box
+Chiều rộng hiển thị = 450px
+Không gian chiếm trên trang = 470px
+
+Trường hợp 2: border-box
+Chiều rộng hiển thị = 400px
+Content thực tế = 350px
+Không gian chiếm trên trang = 420px
+
+Trường hợp 3: Margin Collapse
+Khoảng cách giữa hai box = 40px
+
+Câu A4 Specificity
+
+1.  Rule A (0, 0, 1)
+    Rule B (0, 1, 0)
+    Rule C (1, 0, 0)
+    Rule D (0, 1, 1)
+
+2.Element
+Element sẽ có màu: red
+Vì Rule C dùng selector #main-price, có specificity là (1, 0, 0), cao nhất trong 4 rule
+
+3.Element sẽ có màu:orange
+Vì inline CSS có độ ưu tiên cao hơn selector trong file CSS thông thường
+
+4. Nếu Rule A thêm !important
+   Element sẽ có màu:black
+   Vì !important làm cho thuộc tính đó được ưu tiên hơn các rule CSS bình thường, kể cả selector có id.
