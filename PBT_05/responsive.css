@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile first */
+
+.header {
+  background: #1e293b;
+  color: white;
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: block;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.nav-links {
+  display: none;
+}
+
+.sidebar,
+.ads {
+  display: none;
+}
+
+.layout {
+  padding: 16px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.card h3,
+.card p {
+  padding: 0 16px;
+}
+
+.footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Tablet: >= 768px */
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: gold;
+    text-decoration: underline;
+  }
+
+  .sidebar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    background: white;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 10px;
+  }
+
+  .sidebar h2 {
+    margin: 0;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: >= 1024px */
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .sidebar {
+    display: block;
+    margin: 0;
+    height: fit-content;
+  }
+
+  .sidebar label {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .ads {
+    display: block;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
