@@ -505,3 +505,6 @@ Dự án nhỏ chỉ cần vài dòng CSS
 Muốn luyện CSS thuần để hiểu bản chất
 
 Giao diện cần animation hoặc layout phức tạp riêng
+
+link video:
+https://drive.google.com/drive/folders/1BHWLOj2eRc_a-FtLCBqov7Hh4S_2Yaf1?usp=drive_link
