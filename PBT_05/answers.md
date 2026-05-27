@@ -172,3 +172,81 @@ Cho phép một class kế thừa toàn bộ style của class khác
 ```
 
 SCSS là ngôn ngữ tiền xử lý (CSS Preprocessor), chứa các cú pháp mở rộng, mà trình duyệt lại không hiểu được các cú pháp mở rộng này.
+
+# Câu C2:
+
+## 1. Mobile Wireframe (< 768px)
+
+```text
+┌──────────────────────────┐
+│ HEADER                   │
+│ Logo        ☎ Đặt bàn   │
+├──────────────────────────┤
+│ HERO IMAGE               │
+│ Text + CTA               │
+├──────────────────────────┤
+│ FORM ĐẶT BÀN             │
+│ Ngày                     │
+│ Giờ                      │
+│ Số người                 │
+│ Ghi chú                  │
+├──────────────────────────┤
+│ GRID ẢNH MÓN ĂN          │
+│ Ảnh 1                    │
+│ Ảnh 2                    │
+│ Ảnh 3                    │
+│ Ảnh 4                    │
+│ Ảnh 5                    │
+│ Ảnh 6                    │
+├──────────────────────────┤
+│ GOOGLE MAPS              │
+├──────────────────────────┤
+│ FOOTER                   │
+└──────────────────────────┘
+```
+
+## 2. Tablet Wireframe (≥ 768px)
+
+```text
+┌────────────────────────────────────┐
+│ HEADER: Logo        ☎ Đặt bàn      │
+├────────────────────────────────────┤
+│ HERO IMAGE FULL WIDTH              │
+├────────────────────────────────────┤
+│ FORM ĐẶT BÀN                       │
+│ Ngày | Giờ                         │
+│ Số người | Ghi chú                 │
+├────────────────────────────────────┤
+│ GRID ẢNH MÓN ĂN                    │
+│ Ảnh 1     Ảnh 2                    │
+│ Ảnh 3     Ảnh 4                    │
+│ Ảnh 5     Ảnh 6                    │
+├────────────────────────────────────┤
+│ GOOGLE MAPS FULL WIDTH             │
+├────────────────────────────────────┤
+│ FOOTER                             │
+└────────────────────────────────────┘
+```
+
+## 3. Desktop Wireframe
+
+```text
+┌──────────────────────────────────────────────┐
+│ HEADER: Logo                  ☎ Đặt bàn      │
+├──────────────────────────────────────────────┤
+│ HERO IMAGE FULL WIDTH                        │
+├───────────────────────┬──────────────────────┤
+│ GRID ẢNH MÓN ĂN       │ FORM ĐẶT BÀN          │
+│ Ảnh 1  Ảnh 2  Ảnh 3   │ Ngày                  │
+│ Ảnh 4  Ảnh 5  Ảnh 6   │ Giờ                   │
+│                       │ Số người              │
+│                       │ Ghi chú               │
+├───────────────────────┴──────────────────────┤
+│ GOOGLE MAPS FULL WIDTH                       │
+├──────────────────────────────────────────────┤
+│ FOOTER                                       │
+└──────────────────────────────────────────────┘
+
+```
+
+link video:bhttps://drive.google.com/drive/folders/1-83ZT0rRtNZFVunbsInB_TWQzP_ZDbaC?usp=drive_link
