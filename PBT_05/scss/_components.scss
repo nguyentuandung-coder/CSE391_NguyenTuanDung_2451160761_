@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  background: $light-color;
+  color: $text-color;
+  font-size: 14px;
+
+  @include respond-to(tablet) {
+    font-size: 16px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 18px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  background: $dark-color;
+  color: $white-color;
+  padding: $spacing-md;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: $white-color;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+  }
+
+  .nav-links {
+    display: none;
+
+    @include respond-to(tablet) {
+      display: flex;
+      gap: 24px;
+    }
+
+    a {
+      color: $white-color;
+      text-decoration: none;
+      transition: $transition-fast;
+
+      &:hover {
+        color: gold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.layout {
+  padding: $spacing-md;
+
+  @include respond-to(desktop) {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+}
+
+.sidebar {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: $white-color;
+    padding: $spacing-md;
+    margin: $spacing-md;
+    border-radius: $border-radius;
+  }
+
+  @include respond-to(desktop) {
+    display: block;
+    margin: 0;
+    height: fit-content;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: $white-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  padding-bottom: $spacing-md;
+
+  @include card-shadow;
+
+  transition: $transition-fast;
+
+  &:hover {
+    transform: translateY(-8px);
+
+    @include hover-shadow;
+  }
+
+  &.featured {
+    border: 2px solid $primary-color;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .card-title {
+    padding: 0 $spacing-md;
+    color: $primary-color;
+  }
+
+  .card-price {
+    padding: 0 $spacing-md;
+    font-weight: bold;
+    color: $secondary-color;
+  }
+}
+
+.ads {
+  display: none;
+
+  @include respond-to(desktop) {
+    display: block;
+    background: $white-color;
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    height: fit-content;
+    text-align: center;
+  }
+}
+
+.footer {
+  @include flex-center;
+
+  background: $dark-color;
+  color: $white-color;
+  padding: 20px;
+}
