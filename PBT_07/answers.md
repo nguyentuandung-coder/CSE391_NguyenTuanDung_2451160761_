@@ -774,3 +774,113 @@ Chỉ dùng == khi thực sự hiểu rõ quy tắc ép kiểu của JavaScript.
 ```
 
 Điều này giúp code dễ đọc, dễ bảo trì và tránh các lỗi logic không mong muốn.
+
+# Câu A4 — Truthy & Falsy
+
+## Tất cả giá trị Falsy trong JavaScript
+
+JavaScript chỉ có các giá trị Falsy sau:
+
+```javascript
+false;
+0 - 0;
+0n;
+("");
+""``;
+null;
+undefined;
+NaN;
+```
+
+Ngoài các giá trị trên, mọi giá trị khác đều là Truthy.
+
+---
+
+## Dự đoán kết quả
+
+```text
+A
+C
+D
+G
+H
+```
+
+---
+
+## Kết quả thực tế
+
+```text
+A
+C
+D
+G
+H
+```
+
+---
+
+# Câu A5 — Template Literals
+
+## Cách 1
+
+### Code ban đầu
+
+```javascript
+var greeting = "Xin chào " + name + "! Bạn " + age + " tuổi.";
+```
+
+### Viết lại bằng Template Literal
+
+```javascript
+const greeting = `Xin chào ${name}! Bạn ${age} tuổi.`;
+```
+
+---
+
+## Cách 2
+
+### Code ban đầu
+
+```javascript
+var url = "https://api.example.com/users/" + userId + "/orders?page=" + page;
+```
+
+### Viết lại bằng Template Literal
+
+```javascript
+const url = `https://api.example.com/users/${userId}/orders?page=${page}`;
+```
+
+---
+
+## Cách 3
+
+### Code ban đầu
+
+```javascript
+var html =
+  '<div class="card">' +
+  "<h2>" +
+  title +
+  "</h2>" +
+  "<p>" +
+  description +
+  "</p>" +
+  "<span>Giá: " +
+  price +
+  "đ</span>" +
+  "</div>";
+```
+
+### Viết lại bằng Template Literal
+
+```javascript
+const html = `
+<div class="card">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <span>Giá: ${price}đ</span>
+</div>
+`;
+```
