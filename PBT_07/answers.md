@@ -884,3 +884,255 @@ const html = `
 </div>
 `;
 ```
+
+# Câu C1 — Debug JavaScript
+
+## Code đã sửa
+
+```javascript
+function tinhGiaGiamGia(giaBan, phanTramGiam) {
+  if (typeof giaBan !== "number" || isNaN(giaBan)) {
+    return "Giá bán không hợp lệ";
+  }
+
+  if (typeof phanTramGiam !== "number" || isNaN(phanTramGiam)) {
+    return "Phần trăm giảm không hợp lệ";
+  }
+
+  if (giaBan < 0) {
+    return "Giá bán không được âm";
+  }
+
+  if (phanTramGiam < 0 || phanTramGiam > 100) {
+    return "Phần trăm giảm không hợp lệ";
+  }
+
+  const giamGia = (giaBan * phanTramGiam) / 100;
+  const giaSauGiam = giaBan - giamGia;
+
+  if (giaSauGiam === 0) {
+    console.log("Sản phẩm miễn phí!");
+  }
+
+  return giaSauGiam;
+}
+
+// Test
+const gia = tinhGiaGiamGia(100000, 20);
+console.log("Giá sau giảm: " + gia + "đ");
+
+const gia2 = tinhGiaGiamGia(50000, 110);
+console.log("Giá: " + gia2);
+
+for (let i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log("Item " + i);
+  }, 1000);
+}
+```
+
+---
+
+## Dự đoán kết quả
+
+```text
+Giá sau giảm: 80000đ
+Giá: Phần trăm giảm không hợp lệ
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
+
+---
+
+## Kết quả thực tế
+
+```text
+Giá sau giảm: 80000đ
+Giá: Phần trăm giảm không hợp lệ
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
+
+---
+
+## Liệt kê lỗi + giải thích + cách sửa
+
+### Lỗi 1: Gán nhầm trong điều kiện `if`
+
+Code sai:
+
+```javascript
+if ((giaSauGiam = 0)) {
+  console.log("Sản phẩm miễn phí!");
+}
+```
+
+Dòng này dùng dấu `=` là phép gán, không phải phép so sánh.
+
+Cách sửa:
+
+```javascript
+if (giaSauGiam === 0) {
+  console.log("Sản phẩm miễn phí!");
+}
+```
+
+Nên dùng `===` để so sánh cả giá trị và kiểu dữ liệu.
+
+---
+
+### Lỗi 2: Input `giaBan` là chuỗi nhưng vẫn được tính toán
+
+Code sai:
+
+```javascript
+const gia = tinhGiaGiamGia("100000", 20);
+```
+
+`"100000"` là chuỗi, không phải số. JavaScript có thể tự ép kiểu khi nhân hoặc trừ, nhưng không nên phụ thuộc vào ép kiểu ngầm.
+
+Cách sửa:
+
+```javascript
+const gia = tinhGiaGiamGia(100000, 20);
+```
+
+Đồng thời thêm kiểm tra:
+
+```javascript
+if (typeof giaBan !== "number" || isNaN(giaBan)) {
+  return "Giá bán không hợp lệ";
+}
+```
+
+---
+
+### Lỗi 3: Chưa kiểm tra `phanTramGiam` có phải số hay không
+
+Code ban đầu chỉ kiểm tra:
+
+```javascript
+if (phanTramGiam < 0 || phanTramGiam > 100)
+```
+
+Nếu truyền vào `"abc"` thì điều kiện này không xử lý rõ ràng.
+
+Cách sửa:
+
+```javascript
+if (typeof phanTramGiam !== "number" || isNaN(phanTramGiam)) {
+  return "Phần trăm giảm không hợp lệ";
+}
+```
+
+---
+
+### Lỗi 4: Chưa kiểm tra `giaBan` âm
+
+Nếu gọi:
+
+```javascript
+tinhGiaGiamGia(-100000, 20);
+```
+
+thì chương trình vẫn tính, nhưng giá bán âm là dữ liệu không hợp lệ.
+
+Cách sửa:
+
+```javascript
+if (giaBan < 0) {
+  return "Giá bán không được âm";
+}
+```
+
+---
+
+### Lỗi 5: Dùng `var` không cần thiết
+
+Code ban đầu:
+
+```javascript
+var giamGia = (giaBan * phanTramGiam) / 100;
+```
+
+Trong JavaScript hiện đại, nên hạn chế dùng `var` vì `var` có function scope và dễ gây lỗi hoisting.
+
+Cách sửa:
+
+```javascript
+const giamGia = (giaBan * phanTramGiam) / 100;
+```
+
+Vì giá trị này không cần gán lại nên dùng `const`.
+
+---
+
+### Lỗi 6: Thiếu dấu chấm phẩy
+
+Code ban đầu có nhiều dòng thiếu dấu `;`.
+
+Ví dụ:
+
+```javascript
+return "Phần trăm giảm không hợp lệ";
+```
+
+Cách sửa:
+
+```javascript
+return "Phần trăm giảm không hợp lệ";
+```
+
+JavaScript có cơ chế tự thêm dấu chấm phẩy, nhưng để code rõ ràng và tránh lỗi khó đoán, nên viết đầy đủ.
+
+---
+
+### Lỗi 7: Lỗi ẩn do dùng `var` trong vòng lặp với `setTimeout`
+
+Code sai:
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log("Item " + i);
+  }, 1000);
+}
+```
+
+Kết quả có thể là:
+
+```text
+Item 5
+Item 5
+Item 5
+Item 5
+Item 5
+```
+
+Lý do: `var` có function scope, nên tất cả callback trong `setTimeout` dùng chung một biến `i`. Sau khi vòng lặp kết thúc, `i` đã bằng `5`, nên tất cả callback đều in ra `5`.
+
+Cách sửa:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log("Item " + i);
+  }, 1000);
+}
+```
+
+`let` có block scope, mỗi vòng lặp tạo ra một biến `i` riêng, nên kết quả đúng là:
+
+```text
+Item 0
+Item 1
+Item 2
+Item 3
+Item 4
+```
