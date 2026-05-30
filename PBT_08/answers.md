@@ -397,3 +397,328 @@ let: 2
 ```
 
 ---
+
+# Câu A3 — Array Methods
+
+## Mảng ban đầu
+
+```javascript
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+```
+
+---
+
+## 1. Lấy các số chẵn
+
+### Code
+
+```javascript
+const evenNumbers = nums.filter((n) => n % 2 === 0);
+```
+
+### Kết quả
+
+```javascript
+[2, 4, 6, 8, 10];
+```
+
+---
+
+## 2. Nhân mỗi số với 3
+
+### Code
+
+```javascript
+const multipliedBy3 = nums.map((n) => n * 3);
+```
+
+### Kết quả
+
+```javascript
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
+```
+
+---
+
+## 3. Tính tổng tất cả phần tử
+
+### Code
+
+```javascript
+const total = nums.reduce((sum, n) => sum + n, 0);
+```
+
+### Kết quả
+
+```javascript
+55;
+```
+
+---
+
+## 4. Tìm số đầu tiên lớn hơn 7
+
+### Code
+
+```javascript
+const firstGreaterThan7 = nums.find((n) => n > 7);
+```
+
+### Kết quả
+
+```javascript
+8;
+```
+
+---
+
+## 5. Kiểm tra có số nào lớn hơn 10 không
+
+### Code
+
+```javascript
+const hasGreaterThan10 = nums.some((n) => n > 10);
+```
+
+### Kết quả
+
+```javascript
+false;
+```
+
+---
+
+## 6. Kiểm tra tất cả đều lớn hơn 0
+
+### Code
+
+```javascript
+const allGreaterThan0 = nums.every((n) => n > 0);
+```
+
+### Kết quả
+
+```javascript
+true;
+```
+
+---
+
+## 7. Tạo mảng "Số X là [chẵn/lẻ]"
+
+### Code
+
+```javascript
+const descriptions = nums.map(
+  (n) => `Số ${n} là ${n % 2 === 0 ? "chẵn" : "lẻ"}`,
+);
+```
+
+### Kết quả
+
+```javascript
+[
+  "Số 1 là lẻ",
+  "Số 2 là chẵn",
+  "Số 3 là lẻ",
+  "Số 4 là chẵn",
+  "Số 5 là lẻ",
+  "Số 6 là chẵn",
+  "Số 7 là lẻ",
+  "Số 8 là chẵn",
+  "Số 9 là lẻ",
+  "Số 10 là chẵn",
+];
+```
+
+---
+
+## 8. Đảo ngược mảng (không mutate mảng gốc)
+
+### Code
+
+```javascript
+const reversed = [...nums].reverse();
+```
+
+### Kết quả
+
+```javascript
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+```
+
+---
+
+## Giải thích các phương thức
+
+### filter()
+
+Dùng để lọc phần tử thỏa điều kiện.
+
+```javascript
+nums.filter((n) => n % 2 === 0);
+```
+
+---
+
+### map()
+
+Dùng để biến đổi từng phần tử và tạo mảng mới.
+
+```javascript
+nums.map((n) => n * 3);
+```
+
+---
+
+### reduce()
+
+Dùng để gộp toàn bộ phần tử thành một giá trị duy nhất.
+
+```javascript
+nums.reduce((sum, n) => sum + n, 0);
+```
+
+---
+
+### find()
+
+Trả về phần tử đầu tiên thỏa điều kiện.
+
+```javascript
+nums.find((n) => n > 7);
+```
+
+---
+
+### some()
+
+Kiểm tra có ít nhất một phần tử thỏa điều kiện hay không.
+
+```javascript
+nums.some((n) => n > 10);
+```
+
+---
+
+### every()
+
+Kiểm tra tất cả phần tử có thỏa điều kiện hay không.
+
+```javascript
+nums.every((n) => n > 0);
+```
+
+---
+
+### reverse()
+
+Đảo ngược mảng.
+
+Lưu ý:
+
+```javascript
+nums.reverse();
+```
+
+sẽ làm thay đổi mảng gốc.
+
+Do đó nên dùng:
+
+```javascript
+[...nums].reverse();
+```
+
+để tạo bản sao rồi mới đảo ngược.
+
+---
+
+# Câu A4 — Object Destructuring & Spread
+
+# Phần 1: Destructuring
+
+## Dự đoán
+
+```javascript
+console.log(name, price, ram, color);
+```
+
+Kết quả:
+
+```text
+iPhone 16 25990000 8 Titan
+```
+
+---
+
+## Dự đoán
+
+```javascript
+console.log(specs);
+```
+
+Kết quả:
+
+```text
+ReferenceError
+```
+
+---
+
+# Phần 2: Spread Operator
+
+## Dự đoán
+
+```javascript
+console.log(updated.price);
+```
+
+Kết quả:
+
+```text
+23990000
+```
+
+---
+
+## Dự đoán
+
+```javascript
+console.log(updated.sale);
+```
+
+Kết quả:
+
+```text
+true
+```
+
+---
+
+## Dự đoán
+
+```javascript
+console.log(product.price);
+```
+
+Kết quả:
+
+```text
+25990000
+```
+
+---
+
+# Phần 3: Spread Gotcha
+
+## Code
+
+```javascript
+const copy = { ...product };
+
+copy.specs.ram = 16;
+
+console.log(product.specs.ram);
+```
+
+---
