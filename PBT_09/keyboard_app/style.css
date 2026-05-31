@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #2563eb;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 4px solid #facc15;
+  outline-offset: 4px;
+}
+
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.image-card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+.image-card img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+#imageTitle {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.controls {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.hint {
+  margin-top: 20px;
+  color: #475569;
+}
+
+.modal,
+.palette {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#closeModal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ef4444;
+}
+
+#modalImage {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.palette-box {
+  width: 90%;
+  max-width: 520px;
+  background: white;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+#commandInput {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+}
+
+#commandList {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.command-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.command-item:hover,
+.command-item.active {
+  background: #dbeafe;
+}
+
+@media (max-width: 650px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

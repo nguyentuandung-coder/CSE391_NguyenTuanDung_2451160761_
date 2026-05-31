@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Keyboard Gallery</h1>
+        <button id="openPalette" aria-label="Mở command palette">
+          Ctrl + K
+        </button>
+      </header>
+
+      <section class="gallery" aria-label="Image gallery">
+        <button id="prevBtn" aria-label="Ảnh trước">←</button>
+
+        <div class="image-card">
+          <img id="mainImage" src="" alt="" />
+          <p id="imageTitle"></p>
+        </div>
+
+        <button id="nextBtn" aria-label="Ảnh tiếp theo">→</button>
+      </section>
+
+      <div class="controls">
+        <button id="playBtn" aria-label="Play hoặc pause slideshow">
+          ▶ Play
+        </button>
+        <button id="openModal" aria-label="Mở ảnh trong modal">
+          Open modal
+        </button>
+      </div>
+
+      <p class="hint">
+        ← → chuyển ảnh | 1-9 nhảy ảnh | Space play/pause | Ctrl+K mở command
+        palette
+      </p>
+    </main>
+
+    <div
+      id="imageModal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image modal"
+    >
+      <div class="modal-content">
+        <button id="closeModal" aria-label="Đóng modal">×</button>
+        <img id="modalImage" src="" alt="" />
+      </div>
+    </div>
+
+    <div
+      id="palette"
+      class="palette hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Command palette"
+    >
+      <div class="palette-box">
+        <input
+          id="commandInput"
+          type="text"
+          placeholder="Gõ command..."
+          aria-label="Tìm command"
+        />
+        <ul id="commandList"></ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
