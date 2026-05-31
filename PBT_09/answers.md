@@ -343,3 +343,5 @@ Sau khi tạo xong 1000 phần tử, ta chỉ append fragment vào DOM thật m�
 ```javascript
 document.body.appendChild(fragment);
 ```
+
+link video:
