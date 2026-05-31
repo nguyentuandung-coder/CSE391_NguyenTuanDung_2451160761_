@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multi API Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <div>
+          <h1>Multi-API Dashboard</h1>
+          <p id="loadTime">Chưa tải dữ liệu</p>
+        </div>
+
+        <button id="refreshBtn">Refresh All</button>
+      </header>
+
+      <section id="dashboard" class="dashboard">
+        <article class="widget" id="usersWidget">
+          <h2>Users</h2>
+          <div class="widget-body"></div>
+        </article>
+
+        <article class="widget" id="weatherWidget">
+          <h2>Weather</h2>
+          <div class="widget-body"></div>
+        </article>
+
+        <article class="widget" id="dogWidget">
+          <h2>Random Dog</h2>
+          <div class="widget-body"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

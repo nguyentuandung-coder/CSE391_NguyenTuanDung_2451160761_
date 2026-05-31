@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+header {
+  background: #2563eb;
+  color: white;
+  padding: 24px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0 0 8px;
+}
+
+#loadTime {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#refreshBtn {
+  background: white;
+  color: #2563eb;
+}
+
+.dashboard {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.widget {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+  min-height: 260px;
+}
+
+.widget h2 {
+  margin-top: 0;
+}
+
+.loading {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.error {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.user-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.user-item:last-child {
+  border-bottom: none;
+}
+
+.weather-temp {
+  font-size: 42px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.dog-img {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
