@@ -767,3 +767,5 @@ async function loadProductImage(productId) {
   }
 }
 ```
+
+linkvideo:https://drive.google.com/drive/folders/1flJ0QtTU4Ym8tTd_To6QQh1KSLetBh_2?usp=drive_link

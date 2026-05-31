@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+h1 {
+  text-align: center;
+}
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+#state {
+  margin: 18px 0;
+  font-weight: bold;
+}
+.loading {
+  color: #2563eb;
+}
+.error {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 12px;
+  border-radius: 10px;
+}
+.success {
+  color: #16a34a;
+}
+#userList {
+  list-style: none;
+  padding: 0;
+}
+.user-card {
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+.user-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
