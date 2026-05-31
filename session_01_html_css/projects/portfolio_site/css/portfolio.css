@@ -1,0 +1,141 @@
+.portfolio-section {
+  padding: 100px 20px;
+  background: var(--color-light);
+}
+
+.portfolio-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  color: white;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 41, 59, 0.95) 0%,
+    rgba(30, 41, 59, 0.6) 50%,
+    transparent 100%
+  );
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: all 0.3s ease;
+
+  z-index: 2000;
+}
+
+.lightbox:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  width: 80%;
+
+  max-width: 800px;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 1023px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
