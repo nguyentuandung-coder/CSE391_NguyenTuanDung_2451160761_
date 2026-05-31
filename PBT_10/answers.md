@@ -102,3 +102,43 @@ const data = await response.json();
 Network Error (mất mạng, server không tồn tại)
 Error được throw thủ công
 JSON Parse Error
+
+## Câu A3
+
+### Sơ đồ Promise States
+
+```text
+            PENDING
+           /       \
+          /         \
+         ▼           ▼
+   FULFILLED     REJECTED
+
+   resolve()      reject()
+```
+
+### Callback Hell là gì?
+
+Callback Hell là tình trạng callback lồng nhiều cấp:
+
+### Refactor bằng async/await
+
+```javascript
+async function loadData() {
+  try {
+    const user = await getUser();
+
+    const orders = await getOrders(user.id);
+
+    const product = await getProduct(orders[0].productId);
+
+    const reviews = await getReviews(product.id);
+
+    console.log(reviews);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+Async/Await giúp code đọc từ trên xuống như code đồng bộ và dễ bảo trì hơn.
