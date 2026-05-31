@@ -1,0 +1,56 @@
+/* ===== Theme Colors ===== */
+:root {
+  --primary-color: #e63946;
+  --secondary-color: #1d3557;
+  --light-color: #f1faee;
+  --dark-color: #212529;
+}
+
+/* ===== Navbar ===== */
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* ===== Hero ===== */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ===== Section Title ===== */
+h2 {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* ===== Portfolio Cards ===== */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--secondary-color);
+}
