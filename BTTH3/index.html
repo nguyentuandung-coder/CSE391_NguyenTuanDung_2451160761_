@@ -1,23 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý sinh viên</title>
-    <link rel="stylesheet" href="syle.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>Quản lý sinh viên</h1>
     </header>
+
     <main>
       <div class="toolbar">
         <button id="add">Thêm sinh viên</button>
-        <button id="fix">Sửa sinh viên</button>
-        <button id="del">Xóa sinh viên</button>
       </div>
 
-      <div class="stats" id="statistics">
+      <div class="stats">
         <div>
           <strong>Tổng số sinh viên:</strong>
           <span id="total-count">0</span>
@@ -28,36 +27,20 @@
         </div>
       </div>
 
+      <div id="message"></div>
+
       <table>
         <thead>
           <tr>
-            <th>Mã Sinh viên</th>
+            <th>Mã sinh viên</th>
             <th>Họ và tên</th>
             <th>Ngày sinh</th>
             <th>Lớp học</th>
-            <th>Điểm trung bình</th>
+            <th>Điểm TB</th>
             <th>Email</th>
             <th>Hành động</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>2451160761</td>
-            <td>Nguyễn abc</td>
-            <td>17</td>
-            <td>66HTTT1</td>
-            <td>5</td>
-            <td>bcd@gmail.com</td>
-            <td>
-              <button class="action-btn edit-btn" data-id="${stu.id}">
-                Sửa
-              </button>
-              <button class="action-btn del-btn" data-id="${stu.id}">
-                Xóa
-              </button>
-            </td>
-          </tr>
-        </tbody>
         <tbody id="student-list"></tbody>
       </table>
     </main>
@@ -65,21 +48,31 @@
     <div id="modal">
       <div class="modal-content">
         <h2 id="modal-title">Thêm sinh viên</h2>
+
         <form id="student-form">
-          <input type="text" id="masv" placeholder="Mã sinh viên" required />
-          <input type="text" id="hoten" placeholder="Họ và tên" required />
-          <input type="date" id="ngaysinh" placeholder="Ngày sinh" required />
-          <input type="text" id="lophoc" placeholder="Lớp học" required />
+          <input type="text" id="masv" placeholder="Mã sinh viên" />
+          <small id="masv-error" class="error-message"></small>
+
+          <input type="text" id="hoten" placeholder="Họ và tên" />
+          <small id="hoten-error" class="error-message"></small>
+
+          <input type="date" id="ngaysinh" />
+          <small id="ngaysinh-error" class="error-message"></small>
+
+          <input type="text" id="lophoc" placeholder="Lớp học" />
+          <small id="lophoc-error" class="error-message"></small>
+
           <input
             type="number"
             id="diemtb"
             placeholder="Điểm trung bình"
             step="0.1"
-            min="0"
-            max="10"
-            required
           />
-          <input type="email" id="email" placeholder="Email" required />
+          <small id="diemtb-error" class="error-message"></small>
+
+          <input type="text" id="email" placeholder="Email" />
+          <small id="email-error" class="error-message"></small>
+
           <div class="form-actions">
             <button type="submit" id="save-btn">Lưu</button>
             <button type="button" id="close-btn">Hủy</button>
