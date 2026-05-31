@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Directory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>User Directory</h1>
+
+      <form id="userForm">
+        <input id="nameInput" type="text" placeholder="Name" required />
+        <input id="emailInput" type="email" placeholder="Email" required />
+        <input id="phoneInput" type="text" placeholder="Phone" required />
+        <button id="submitBtn" type="submit">Add User</button>
+        <button id="cancelBtn" type="button" class="hidden">Cancel</button>
+      </form>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search by name or email..."
+      />
+
+      <section id="toast"></section>
+      <section id="loading"></section>
+      <section id="userList" class="user-list"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

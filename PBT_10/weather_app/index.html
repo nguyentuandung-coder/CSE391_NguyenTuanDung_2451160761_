@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Weather App</h1>
+
+      <form id="searchForm">
+        <input id="cityInput" type="text" placeholder="Nhập tên thành phố..." />
+        <button type="submit">Tìm</button>
+      </form>
+
+      <section id="stateBox"></section>
+
+      <section class="history-section">
+        <h2>Lịch sử tìm kiếm</h2>
+        <div id="historyList"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
