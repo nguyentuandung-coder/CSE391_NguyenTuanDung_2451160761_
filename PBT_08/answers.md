@@ -722,3 +722,29 @@ console.log(product.specs.ram);
 ```
 
 ---
+
+# Câu C1 — Refactor Code
+
+# Code Refactor
+
+```javascript
+const processOrders = (orders) => {
+  return orders
+
+    .filter((order) => order.status === "completed" && order.total > 100000)
+
+    .map((order) => {
+      const discount = order.total * 0.1;
+
+      return {
+        id: order.id,
+        customer: order.customer,
+        total: order.total,
+        discount,
+        finalTotal: order.total - discount,
+      };
+    })
+
+    .sort((a, b) => b.finalTotal - a.finalTotal);
+};
+```
