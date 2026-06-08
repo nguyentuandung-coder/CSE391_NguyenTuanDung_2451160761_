@@ -44,7 +44,7 @@ Quy tắc đặt tên commit
 # ✅ Đúng
 
 git commit -m "[BOOTSTRAP] Add Bootstrap CDN and initial setup"
-git commit -m "[FEATURE] Convert grid to Bootstrap columns"
+git commit -m "[REFACTOR] Convert grid to Bootstrap columns"
 git commit -m "[STYLE] Apply Bootstrap typography utilities"
 git commit -m "[CUSTOMIZE] Override Bootstrap primary color"
 git commit -m "[THEME] Apply complete new color palette"
